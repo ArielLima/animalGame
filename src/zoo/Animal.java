@@ -1,4 +1,4 @@
-package zoo;
+package TestForZoo;
 
 import java.lang.Math;
 
@@ -9,10 +9,77 @@ class Animal {
     int defense = 50;
     int speed = 25;
 
+    //Add ons
+    double dodging;
+    boolean dodge;
+
+    double critical;
+    boolean critical_hit;
+
+    // Attack of the Animal
     public int attack() {
-        return (int)(Math.random() * ((attackPower - (attackPower/2)) + 1));
+        if (critical_hit) {
+            return (int) (Math.random() * ((attackPower - (attackPower / 2)) + 1)) * 2;
+        } else {
+            return (int) (Math.random() * ((attackPower - (attackPower / 2)) + 1));
+        }
     }
-    public void receiveDamage(int damage){
-        this.health = damage - (int)(Math.random() * (this.defense));
+
+
+    // Defense of the Animal and Evasion of Animal
+    public void receive_damage(int damage) {
+        if (dodge) {
+            damage *= 0;
+        } else {
+            this.health = damage - (int) (Math.random() * (this.defense));
+        }
+
     }
+
+    //Setting Dodge
+    public boolean evade_me() {
+        dodging = (Math.random());
+        if (dodging <= 0.2) {
+            dodge = true;
+        } else {
+            dodge = false;
+        }
+        return dodge;
+    }
+
+    //Setting Stun
+    public boolean critical_me() {
+        critical = (Math.random());
+        if (critical <= 0.15) {
+            critical_hit = true;
+        } else {
+            critical_hit = false;
+        }
+        return critical_hit;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
