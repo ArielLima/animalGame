@@ -2,21 +2,16 @@ package TestForZoo;
 
 import java.lang.Math;
 
-public class Animals {
+public class Snake extends Reptile {
 
 
     // Class variables
-    int attackPower = 25;
+    int attackPower = 60;
     int health = 100;
-    int defense = 50;
-    int speed = 25;
+    int defense = 20;
+    int speed = 15;
+    int get_health;
 
-    //Add ons
-    double dodging;
-    boolean dodge;
-
-    double critical;
-    boolean critical_hit;
 
     // Attack of the Animal
     public int attack() {
@@ -38,9 +33,15 @@ public class Animals {
 
     }
 
+    //Health of the Animal
+    public void healing(){
+        health = health + healing;
+    }
+
     //Setting Dodge
     public void evade_me() {
         dodging = (Math.random());
+
         if (dodging <= 0.2) {
             dodge = true;
         } if (dodging > 0.2) {
@@ -48,27 +49,33 @@ public class Animals {
         }
     }
 
-    //Setting Critical
+    //Setting Critical hit
+    @Override
     public void critical_me() {
-        critical = (Math.random());
-        if (critical < 0.15) {
+        critical = Math.random();
+        if (critical < 0.25) {
             critical_hit = true;
-        } if (critical > 0.15 ) {
+        } if (critical > 0.25){
             critical_hit = false;
         }
     }
 
-    public static void main(String[] args) {
-
-        Animals fight = new Animals();
-        Animals reptile = new Reptile();
-
-        fight.critical_me();
-
-
+    @Override
+    //Only reptile
+    public boolean shed_skin() {
+        return Math.random() < 0.7;
     }
 
+    public int heal() {
+        if (shed_skin()) {
+            healing = 5;
+        } else {
+            healing = 0;
+        }
+        return healing;
+    }
 }
+
 
 
 
