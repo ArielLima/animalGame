@@ -1,4 +1,4 @@
-package TestForZoo;
+package zoo;
 
 import java.lang.Math;
 

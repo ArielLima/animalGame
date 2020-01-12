@@ -1,8 +1,8 @@
-package TestForZoo;
+package zoo;
 
 import java.lang.Math;
 
-public class Animals {
+class Animals {
 
 
     // Class variables
