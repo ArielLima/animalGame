@@ -2,7 +2,7 @@ package zoo;
 
 import java.lang.Math;
 
-class Animals {
+class Animal {
 
 
     // Class variables
