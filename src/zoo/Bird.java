@@ -2,7 +2,7 @@ package zoo;
 
 public class Bird extends Animal {
 
-    
+
     public Bird(int attackPower, int health, int defense, int speed) {
 
         this.attackPower = attackPower;
