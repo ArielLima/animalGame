@@ -2,18 +2,11 @@ package zoo;
 
 import java.lang.Math;
 
-public class Reptile extends Animals {
+public class Reptile extends Animal {
 
-
-    // Class variables
-    int attackPower = 60;
-    int health = 100;
-    int defense = 20;
-    int speed = 15;
-    int get_health;
-    boolean hydrate;
+    //For reptiles
     int healing;
-
+    boolean hydrate;
 
 
     // Attack of the Animal
@@ -59,7 +52,7 @@ public class Reptile extends Animals {
 
 
     //Only reptile
-    public boolean shed_skin() {
+    private boolean shed_skin() {
         return Math.random() < 0.5;
     }
 

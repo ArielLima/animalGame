@@ -60,8 +60,8 @@ class Animal {
 
     public static void main(String[] args) {
 
-        Animals fight = new Animals();
-        Animals reptile = new Reptile();
+        Animal fight = new Animal();
+        Animal reptile = new Reptile();
 
         fight.critical_me();
 

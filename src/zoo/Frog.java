@@ -53,13 +53,12 @@ public class Frog extends Reptile{
             hydrate = false;
         }
     }
-
-    @Override
     //Only reptile
     public boolean shed_skin() {
         return Math.random() < 0.7;
     }
 
+    @Override
     public int heal() {
         if (shed_skin()) {
             health = health + 5;
