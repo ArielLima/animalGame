@@ -2,21 +2,12 @@ package zoo;
 
 import java.lang.Math;
 
-class Animal {
+public class Reptile extends Animal {
 
+    //For reptiles
+    int healing;
+    boolean hydrate;
 
-    // Class variables
-    int attackPower = 25;
-    int health = 100;
-    int defense = 50;
-    int speed = 25;
-
-    //Add ons
-    double dodging;
-    boolean dodge;
-
-    double critical;
-    boolean critical_hit;
 
     // Attack of the Animal
     public int attack() {
@@ -40,6 +31,7 @@ class Animal {
 
     //Setting Dodge
     public void evade_me() {
+
         dodging = (Math.random());
         if (dodging <= 0.2) {
             dodge = true;
@@ -48,26 +40,31 @@ class Animal {
         }
     }
 
-    //Setting Critical
+    //Setting Critical hit
     public void critical_me() {
-        critical = (Math.random());
+        critical = Math.random();
         if (critical < 0.15) {
             critical_hit = true;
-        } if (critical > 0.15 ) {
+        } if(critical > 0.15) {
             critical_hit = false;
         }
     }
 
-    public static void main(String[] args) {
 
-        Animal fight = new Animal();
-        Animal reptile = new Reptile();
-
-        fight.critical_me();
-
-
+    //Only reptile
+    private boolean shed_skin() {
+        return Math.random() < 0.5;
     }
 
+    public int heal() {
+        if (shed_skin()) {
+            health = health + 5;
+            return health;
+        } else {
+            health = health;
+            return health;
+        }
+    }
 }
 
 
